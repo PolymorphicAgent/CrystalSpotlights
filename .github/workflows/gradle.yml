@@ -96,10 +96,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-#      - name: Debug Upload URL
-#        run: |
-#          echo "Upload URL: ${{ steps.create_release.outputs.upload_url }}"
-
       - name: Upload All JAR Files
         run: |
           for file in build/libs/*.jar; do
