@@ -3,6 +3,10 @@ A Minecraft Server Plugin that adds Spotlight Crystals to the game! Spotlight Cr
 
 ![](./Images/crystal-array.gif "Satisfying Redstone + Spotlight Crystal Array")
 
+These are all the options in the settings menu!
+
+![](./Images/Settings-Menu.gif)
+
 Currently, this plugin works for only minecraft version 1.19.4. Newer versions are in active development!
 
 TODO: Finish this documentation
