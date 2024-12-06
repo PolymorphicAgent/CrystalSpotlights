@@ -36,6 +36,12 @@ jobs:
       - name: Build with Gradle Wrapper
         run: chmod +x gradlew && ./gradlew build
 
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: gradle-output
+          path: build/libs/
+
   dependency-submission:
     runs-on: ubuntu-latest
     permissions:
