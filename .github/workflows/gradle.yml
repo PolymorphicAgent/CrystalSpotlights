@@ -95,13 +95,23 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Debug Upload URL
+        run: |
+          echo "Upload URL: ${{ steps.create_release.outputs.upload_url }}"
+
       - name: Upload All JAR Files
         run: |
           for file in build/libs/*.jar; do
             echo "Uploading $file"
-            upload_url="${{ steps.create_release.outputs.upload_url }}"
-            upload_url="${upload_url%\{*}?name=$(basename "$file")"
+            raw_url="${{ steps.create_release.outputs.upload_url }}"
+            if [ -z "$raw_url" ]; then
+              echo "Error: upload_url is empty. Cannot proceed." >&2
+              exit 1
+            fi
+            # Format the upload URL
+            upload_url="${raw_url%\{*}?name=$(basename "$file")"
             echo "Formatted upload URL: $upload_url"
+            # Perform the upload
             curl \
               -X POST \
               -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
