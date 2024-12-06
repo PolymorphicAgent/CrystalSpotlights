@@ -2328,8 +2328,12 @@ public class CrystalSpotlights extends JavaPlugin implements Listener {
         ));
 
         //update red arrow names
-        Objects.requireNonNull(gui.getItem(25)).getItemMeta().displayName(Component.text("§c§l§nDecrease Sweeping Speed"));
-        Objects.requireNonNull(gui.getItem(26)).getItemMeta().displayName(Component.text("§a§l§nIncrease Sweeping Speed"));
+        ItemMeta t5 = Objects.requireNonNull(gui.getItem(25)).getItemMeta();
+        t5.displayName(Component.text("§c§l§nDecrease Sweeping Speed"));
+        Objects.requireNonNull(gui.getItem(25)).setItemMeta(t5);
+        ItemMeta t6 = Objects.requireNonNull(gui.getItem(26)).getItemMeta();
+        t6.displayName(Component.text("§a§l§nIncrease Sweeping Speed"));
+        Objects.requireNonNull(gui.getItem(26)).setItemMeta(t6);
 
         //get the current speed for the crystal from the crystal's persistent data container
         double speed = getCrystalPersistentDataDouble(crystal, "speed");
