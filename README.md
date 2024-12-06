@@ -9,4 +9,6 @@ These are all the options in the settings menu!
 
 Currently, this plugin works for only minecraft version 1.19.4. Newer versions are in active development!
 
+Please, If you find any glitches/bugs, open an issue! I will fix it!
+
 TODO: Finish this documentation
