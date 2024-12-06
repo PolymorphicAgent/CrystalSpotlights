@@ -12,10 +12,9 @@ on:
         required: true
         default: "No description provided."
       release_version:
-        description: : "Version"
+        description: "Version"
         required: true
         default: "No version provided."
-
 
 jobs:
   build:
