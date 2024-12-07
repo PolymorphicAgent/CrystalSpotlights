@@ -1,4 +1,4 @@
-name: Java CI with Gradle
+name: Build with Gradle, But Dont Create a New Release
 
 on:
 #  push:
