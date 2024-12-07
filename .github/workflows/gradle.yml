@@ -100,7 +100,6 @@ jobs:
         run: |
           for file in build/libs/*.jar; do
             echo "Uploading $file"
-            echo "${{ steps.create_release.outputs.upload_url }}=$(basename $file)"
             curl \
               -X POST \
               -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
