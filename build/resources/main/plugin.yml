@@ -1,0 +1,10 @@
+name: CrystalSpotlights
+version: 1.0.1-beta
+main: me.polymorphicagent.crystalspotlights.CrystalSpotlights
+author: Polymorphic Agent
+description: Adds spotlight endcrystals with customizable beams
+api-version: '1.19'
+commands:
+  teststick:
+    description: Gives a player a test stick.
+    usage: /teststick <player>

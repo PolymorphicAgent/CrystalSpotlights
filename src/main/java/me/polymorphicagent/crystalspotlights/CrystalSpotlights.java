@@ -71,6 +71,9 @@ public class CrystalSpotlights extends JavaPlugin implements Listener {
             return;
         }
 
+        //check if config.yml doesn't exist, and if not, create it
+        saveDefaultConfig();
+
         //register the event logic defined in the @EventListener methods below
         Bukkit.getServer().getPluginManager().registerEvents(this, this);
 
