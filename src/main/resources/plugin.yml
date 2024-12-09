@@ -1,5 +1,5 @@
 name: CrystalSpotlights
-version: 1.0.2-beta
+version: 1.0.3-beta
 main: me.polymorphicagent.crystalspotlights.CrystalSpotlights
 author: Polymorphic Agent
 description: Adds spotlight endcrystals with customizable beams
