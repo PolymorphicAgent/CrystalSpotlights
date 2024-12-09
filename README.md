@@ -14,7 +14,7 @@ This is how you craft a Spotlight Crystal:
 Also, a command that is only available to operators is added: `/teststick <player>`
 This command will give the player specified a "test stick", which can be used to get information from the crystal. It is intended for debugging purposes!
 
-Currently, this plugin works for only minecraft version 1.19.4. Newer versions are in active development!
+### Currently, this plugin works for only minecraft version 1.19.4. Newer versions are in active development!
 
 Please, If you find any glitches/bugs, open an issue! I will fix it!
 
