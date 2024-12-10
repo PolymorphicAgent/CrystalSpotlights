@@ -83,7 +83,7 @@ public class CrystalSpotlights extends JavaPlugin implements Listener {
         ItemMeta stickMeta = testStick.getItemMeta();
         stickMeta.displayName(Component.text("§9§l§nTest Stick"));
         testStick.setItemMeta(stickMeta);
-        testStick.addUnsafeEnchantment(Enchantment.PROTECTION_FALL, 1);
+        testStick.addUnsafeEnchantment(Enchantment.FEATHER_FALLING, 1);
         NBT.modify(testStick, nbt -> {
             nbt.setString("stick", "test");
         });

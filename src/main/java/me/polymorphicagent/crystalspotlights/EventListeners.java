@@ -884,6 +884,9 @@ public class EventListeners implements Listener {
 
             //update the crystal's beam state
             Utils.updateCrystalState(crystal);
+
+            //dummy
+            player.playSound(player.getLocation(), Sound.BLOCK_DISPENSER_DISPENSE, 1.0f, 1.0f);
         }
 
         //check if the clicked item is a compass
@@ -925,6 +928,9 @@ public class EventListeners implements Listener {
 
             //update the crystal's beam state
             Utils.updateCrystalState(crystal);
+
+            //dummy
+            player.playSound(player.getLocation(), Sound.BLOCK_DISPENSER_DISPENSE, 1.0f, 1.0f);
         }
 
         //check if the item is a clock - already selected, so do nothing

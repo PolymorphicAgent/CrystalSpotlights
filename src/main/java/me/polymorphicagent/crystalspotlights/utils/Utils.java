@@ -523,21 +523,24 @@ public class Utils {
         //create the player head item
         ItemStack head = new ItemStack(Material.PLAYER_HEAD, 1);
 
-        //for Minecraft 1.20.4 and below
-        NBT.modify(head, nbt -> {
+        //workaround for minecraft 1.20.5+
+        NBT.modifyComponents(head, nbt -> {
 
             //create nbt owner compound
-            ReadWriteNBT skullOwnerCompound = nbt.getOrCreateCompound("SkullOwner");
+            ReadWriteNBT profileNbt = nbt.getOrCreateCompound("minecraft:profile");
 
             /// The owner UUID. Note that skulls with the same UUID but different textures will misbehave and only one texture will load.
             /// They will share the texture. To avoid this limitation, it is recommended to use a random UUID.
-            skullOwnerCompound.setUUID("Id", UUID.randomUUID());
+            profileNbt.setUUID("id", UUID.randomUUID());
 
-            //apply the nbt compound
-            skullOwnerCompound.getOrCreateCompound("Properties")
-                    .getCompoundList("textures")
-                    .addCompound()
-                    .setString("Value", texture);
+            //get the compound list
+            ReadWriteNBT propertiesNbt = profileNbt.getCompoundList("properties").addCompound();
+
+            //write the header
+            propertiesNbt.setString("name", "textures");
+
+            //apply the texture
+            propertiesNbt.setString("value", texture);
         });
 
         //return the finished item
@@ -716,7 +719,7 @@ public class Utils {
 
             //actually spawn the particles
             start.getWorld().spawnParticle(
-                    Particle.REDSTONE,
+                    Particle.DUST,
                     particleLoc,
                     10,//particle count at each spawn point
                     0.3, 0.3, 0.3,//offset for beam width
